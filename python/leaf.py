@@ -116,10 +116,9 @@ file_path = 'leaf_details.csv'
 details = []
 
 
-
 try:
     with open(file_path, 'r') as file:
-        reader = csv.DictReader(file)
+        reade = csv.DictReader(file)
         details = [row for row in reader]
 except FileNotFoundError:
     pass
