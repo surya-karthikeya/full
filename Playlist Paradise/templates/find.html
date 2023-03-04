@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Playlist Paradise</title>
+</head>
+<body>
+	<h1>Unleash the sound of top ranking songs!</h1>
+	<form method="post">
+		<label for="api-dropdown">Select an option:</label>
+		<select name="country" id="api-dropdown">
+			<option value="GLOBAL">GLOBAl</option>
+			<option value="AR">CANADA</option>
+			<option value="AU">LONDON</option>
+			<option value="AT">BRAZIL</option>
+			<option value="BR">INDIA</option>
+			<option value="BG">SOUTH AFRICA</option>
+			<option value="CA">KOREA</option>
+			<option value="CR">CHINA</option>
+			<option value="SV">ARABIA</option>
+			<option value="EE">GERMANY</option>
+			<option value="FR">NEW JERSEY</option>
+			<option value="IN">SRI LANKA</option>
+			<option value="ID">BANGLADESH</option>
+		</select>
+		<input type="submit" value="submit">
+	</form>
+
+    {% if find %}
+        <p>{{ find }}</p>
+    {% endif %}
+</body>
+
+</html>
