@@ -7,13 +7,10 @@
 </head>
 <body>
     <h1>Keep Your Music on Track</h1>
-    <form method="post">
+    <form method="get" action="/spotify/search">
         <input type="text" name="query" placeholder="Search . . ." required>
         <input type="submit" value="Search">
     </form>
-    {% if data %}
         <h2>Don't get lost in this music</h2>
-        <p>{{data}}</p>
-    {% endif %}
 </body>
 </html>
