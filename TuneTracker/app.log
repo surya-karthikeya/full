@@ -1,9 +1,0 @@
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 597-156-806
-INFO:werkzeug: * Detected change in 'C:\\Users\\surya\\Documents\\full-intern\\full-internship\\TuneTracker\\main.py', reloading
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 597-156-806
-INFO:werkzeug:127.0.0.1 - - [10/Mar/2023 18:29:00] "GET / HTTP/1.1" 200 -
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): spotify81.p.rapidapi.com:443
-DEBUG:urllib3.connectionpool:https://spotify81.p.rapidapi.com:443 "GET /search?q=hi&type=multi&offset=0&limit=10&numberOfTopResults=5 HTTP/1.1" 200 None
-INFO:werkzeug:127.0.0.1 - - [10/Mar/2023 18:29:26] "GET /spotify/search?query=hi HTTP/1.1" 200 -

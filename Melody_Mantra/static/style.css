@@ -32,9 +32,10 @@ input[type="text"] {
   border-radius: 4px;
   width: 70%;
   margin-right: 10px;
+  margin-left: 150px;
 }
 
-input[type="submit"] {
+button {
   background-color: #4CAF50;
   color: white;
   font-size: 16px;
@@ -44,7 +45,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+button:hover {
   background-color: #45a049;
 }
 
@@ -57,4 +58,8 @@ h2 {
 p {
   margin-top: 0;
   color: #a28089;
+}
+
+ul{
+    color: #fce9e9;
 }
