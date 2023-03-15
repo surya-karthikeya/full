@@ -31,4 +31,4 @@ def search_spotify(query):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=9779)
+    app.run(debug=True, port=977)
