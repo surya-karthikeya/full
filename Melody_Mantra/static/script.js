@@ -7,13 +7,14 @@
        xhr.onreadystatechange = function() {
          if (xhr.readyState === xhr.DONE && xhr.status === 200) {
            var results = JSON.parse(xhr.responseText);
-           var itemList = results;
-           var newListHTML = "<ul>";
-           for (var i = 0; i < itemList.length; i++) {
-                newListHTML += "<li>" + itemList[i] + "</li>";
+           newListHTML = results.data.map(item => `<li>${item}</li>`)
+           if (results.success) {
+                resultList.innerHTML = newListHTML.join('');
            }
-           newListHTML += "</ul>";
-           resultList.innerHTML = newListHTML;
+           else{
+                resultList.innerHTML = 'Processing failed';
+           }
+
          }
        };
        xhr.send();

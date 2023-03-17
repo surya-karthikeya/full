@@ -13,7 +13,8 @@ def index():
 @app.route('/spotify/search')
 def search():
     query = request.args.get('query')
-    result = search_spotify(query)
+    data = search_spotify(query)
+    result = {'success': True, 'data': data}
     return jsonify(result)
 
 
@@ -27,30 +28,31 @@ def search_spotify(query):
 
     response = requests.get(url, headers=headers, params=params)
     results = json.loads(response.content)
-    album = results.get('albums')
-    if album:
-        item = album.get('items')
-        data = []
-        for i in range(len(item)):
-            user = item[i].get('data')
-            data.append(user)
+    album = results.get('albums', {})
+    try:
+        if album:
+            item = album.get('items', [])
+            
+            data = []
+            for i in item:
+                data.append(i.get('data', {}))
 
-        artist = []
-        for j in range(len(data)):
-            user1 = data[j].get('artists')
-            artist.append(user1)
+            artist = []
+            for j in data:
+                artist.append(j.get('artists', {}))
 
-        items1 = []
-        for k in range(len(artist)):
-            user2 = artist[k].get('items')
-            items1.append(user2)
+            items1 = []
+            for k in artist:
+                items1.append(k.get('items', {}))
 
-        profile = []
-        for g in range(len(items1)):
-            user3 = items1[g][0].get('profile').get('name')
-            profile.append(user3)
-
-        return profile
+            profile = []
+            for g in items1:
+                profile.append(g[0].get('profile', {}).get('name', {}))
+            return profile
+        else:
+            return {'error': f'Missing required key'}
+    except KeyError as e:
+        return {'error': f'Missing required key{e}'}
 
 
 if __name__ == '__main__':
