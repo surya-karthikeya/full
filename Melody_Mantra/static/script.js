@@ -6,8 +6,8 @@
        xhr.open('GET', url, true);
        xhr.onreadystatechange = function() {
          if (xhr.readyState === xhr.DONE && xhr.status === 200) {
+         var results = JSON.parse(xhr.responseText);
            if (results.success) {
-                var results = JSON.parse(xhr.responseText);
                 newListHTML = results.data.map(item => `<li>${item}</li>`)
                 resultList.innerHTML = newListHTML.join('');
            }
