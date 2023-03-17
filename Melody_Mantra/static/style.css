@@ -61,5 +61,14 @@ p {
 }
 
 ul{
-    color: #fce9e9;
+    color: #FFDC00;
+    font-size: 160%
+
+}
+li {
+    margin: 5px 0;
+    background-color: #85144b;
+    padding: 1px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }

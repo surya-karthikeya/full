@@ -2,17 +2,18 @@
        var query = document.getElementById('query').value;
        var xhr = new XMLHttpRequest();
        var resultList = document.getElementById('results')
-       url='spotify/search?query=' + encodeURIComponent(query);
+       url='spotify/search?query=' + query;
        xhr.open('GET', url, true);
        xhr.onreadystatechange = function() {
          if (xhr.readyState === xhr.DONE && xhr.status === 200) {
            var results = JSON.parse(xhr.responseText);
-           var filteredObj = {
-                "albums" : results.albums
-//                "items" : results.albums.items
+           var itemList = results;
+           var newListHTML = "<ul>";
+           for (var i = 0; i < itemList.length; i++) {
+                newListHTML += "<li>" + itemList[i] + "</li>";
            }
-           var filteredJson = JSON.stringify(filteredObj)
-           resultList.innerHTML = filteredJson;
+           newListHTML += "</ul>";
+           resultList.innerHTML = newListHTML;
          }
        };
        xhr.send();
