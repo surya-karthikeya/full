@@ -32,7 +32,7 @@ def search_spotify(query):
     try:
         if album:
             item = album.get('items', [])
-            
+
             data = []
             for i in item:
                 data.append(i.get('data', {}))
