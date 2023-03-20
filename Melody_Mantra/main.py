@@ -13,8 +13,13 @@ def index():
 @app.route('/spotify/search')
 def search():
     query = request.args.get('query')
+<<<<<<< HEAD
     data = search_spotify(query)
     result = {'success': True, 'data': data}
+=======
+    data, image = search_spotify(query)
+    result = {'success': True, 'data': data, 'image': image}
+>>>>>>> Experimental
     return jsonify(result)
 
 
@@ -37,10 +42,29 @@ def search_spotify(query):
             for i in item:
                 data.append(i.get('data', {}))
 
+<<<<<<< HEAD
+=======
+            data1 = data
+>>>>>>> Experimental
             artist = []
             for j in data:
                 artist.append(j.get('artists', {}))
 
+<<<<<<< HEAD
+=======
+            coverart = []
+            for a in data1:
+                coverart.append(a.get('coverArt', {}))
+
+            sources = []
+            for b in coverart:
+                sources.append(b.get('sources', {}))
+
+            url = []
+            for c in sources:
+                url.append(c[0].get('url', {}))
+
+>>>>>>> Experimental
             items1 = []
             for k in artist:
                 items1.append(k.get('items', {}))
@@ -48,7 +72,11 @@ def search_spotify(query):
             profile = []
             for g in items1:
                 profile.append(g[0].get('profile', {}).get('name', {}))
+<<<<<<< HEAD
             return profile
+=======
+            return profile, url
+>>>>>>> Experimental
         else:
             return {'error': f'Missing required key'}
     except KeyError as e:
