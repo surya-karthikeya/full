@@ -1,8 +1,11 @@
 from flask import Flask, request, render_template, jsonify
 import requests
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
+origins = ['http://localhost:3000']
+CORS(app, origins=origins)
 
 
 @app.route('/')
@@ -13,8 +16,8 @@ def index():
 @app.route('/spotify/search')
 def search():
     query = request.args.get('query')
-    data, image = search_spotify(query)
-    result = {'success': True, 'data': data, 'image': image}
+    res = search_spotify(query)
+    result = {'success': True, 'item': res}
     return jsonify(result)
 
 
@@ -61,7 +64,11 @@ def search_spotify(query):
             profile = []
             for g in items1:
                 profile.append(g[0].get('profile', {}).get('name', {}))
-            return profile, url
+
+            # objects = dict(zip(profile, url))
+
+            objects = {'data': profile, 'image': url}
+            return objects
         else:
             return {'error': f'Missing required key'}
     except KeyError as e:
@@ -69,4 +76,4 @@ def search_spotify(query):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=977)
+    app.run(debug=True)
