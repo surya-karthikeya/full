@@ -14,7 +14,7 @@ def main():
 def create():
     try:
         data = request.get_json()
-        name = data['name']
+        name = data.get('name', {})
         anime = data['anime']
         user = {"id": len(users) + 1, "name": name, "anime": anime}
         users.append(user)
@@ -23,7 +23,7 @@ def create():
         return jsonify({"message": f"Error {str(e)}"})
 
 
-@app.route('/read/<int:id>', methods=['GET'])
+@app.route('/read/<id>', methods=['GET'])
 def read(idi):
     try:
         for user in users:
@@ -35,7 +35,7 @@ def read(idi):
         return jsonify({"message": f"Error {str(e)}"})
 
 
-@app.route('/update/<int:id>', methods=['PUT'])
+@app.route('/update/<id>', methods=['PUT'])
 def update(idi):
     try:
         data = request.get_json()
@@ -51,7 +51,7 @@ def update(idi):
         return jsonify({"message": f"Error {str(e)}"})
 
 
-@app.route('/delete/<int:id>', methods=['DELETE'])
+@app.route('/delete/<id>', methods=['DELETE'])
 def delete(idi):
     try:
         for user in users:

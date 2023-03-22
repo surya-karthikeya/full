@@ -8,11 +8,12 @@ users = []
 @app.route('/create', methods=['POST'])
 def create():
     try:
-        name = request.json['name']
-        anime = request.json['anime']
+        name = request.json.get('name')
+        anime = request.json.get('anime')
+        u_id = len(users)+1
         with sqlite3.connect('database.db') as con:
             cur = con.cursor()
-            insert_data = f"INSERT INTO users (name, anime) VALUES ('{name}', '{anime}')"
+            insert_data = f"INSERT INTO users (id, name, anime) VALUES ('{u_id}', '{name}', '{anime}')"
             cur.execute(insert_data)
             con.commit()
         return jsonify({'message': 'User created successfully!'})
@@ -56,8 +57,8 @@ def read(user_id):
 @app.route('/update/<user_id>', methods=['PUT'])
 def update(user_id):
     try:
-        name = request.json['name']
-        anime = request.json['anime']
+        name = request.json.get('name')
+        anime = request.json.get('anime')
 
         with sqlite3.connect('database.db') as con:
             cur = con.cursor()
@@ -93,4 +94,4 @@ def delete(user_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=9999)
