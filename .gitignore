@@ -45,3 +45,21 @@ TuneTracker/.idea/modules.xml
 .idea/inspectionProfiles/profiles_settings.xml
 .idea/inspectionProfiles/Project_Default.xml
 .idea/.name
+react/.idea/misc.xml
+react/.idea/modules.xml
+react/.idea/New folder.iml
+react/.idea/vcs.xml
+react/.idea/inspectionProfiles/profiles_settings.xml
+react/.idea/inspectionProfiles/Project_Default.xml
+react/spotify/package-lock.json
+react/spotify/package.json
+react/spotify/src/reportWebVitals.js
+react/spotify/README.md
+.gitignore
+react/spotify/public/favicon.ico
+react/spotify/public/logo192.png
+react/spotify/public/logo512.png
+react/spotify/public/manifest.json
+react/spotify/public/robots.txt
+react/spotify/src/App.test.js
+react/spotify/src/setupTests.js
