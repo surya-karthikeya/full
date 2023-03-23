@@ -14,7 +14,7 @@ function Search() {
   const response = await axios.get(`http://localhost:5000/spotify/search?query=${query}`);
   let something = response['data']['data'];
   setResults(something);
-  // console.log(something);
+  console.log(something);
   };
 
 
