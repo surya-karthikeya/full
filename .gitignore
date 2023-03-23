@@ -45,6 +45,7 @@ TuneTracker/.idea/modules.xml
 .idea/inspectionProfiles/profiles_settings.xml
 .idea/inspectionProfiles/Project_Default.xml
 .idea/.name
+<<<<<<< HEAD
 react/.idea/misc.xml
 react/.idea/modules.xml
 react/.idea/New folder.iml
@@ -62,4 +63,23 @@ react/spotify/public/logo512.png
 react/spotify/public/manifest.json
 react/spotify/public/robots.txt
 react/spotify/src/App.test.js
+=======
+react/.idea/modules.xml
+react/.idea/misc.xml
+react/.idea/vcs.xml
+react/spotify/README.md
+react/.idea/inspectionProfiles/profiles_settings.xml
+react/.idea/New folder.iml
+react/.idea/inspectionProfiles/Project_Default.xml
+react/spotify/src/App.test.js
+react/spotify/public/logo512.png
+react/spotify/src/reportWebVitals.js
+react/spotify/public/logo192.png
+react/spotify/public/manifest.json
+react/spotify/src/logo.svg
+react/spotify/package-lock.json
+react/spotify/package.json
+react/spotify/public/favicon.ico
+react/spotify/public/robots.txt
+>>>>>>> 9554216 (react and flask based songs search api)
 react/spotify/src/setupTests.js
