@@ -17,7 +17,7 @@ def index():
 def search():
     query = request.args.get('query')
     res = search_spotify(query)
-    result = {'success': True, 'item': res}
+    result = {'success': True, 'data': res}
     return jsonify(result)
 
 
@@ -65,10 +65,11 @@ def search_spotify(query):
             for g in items1:
                 profile.append(g[0].get('profile', {}).get('name', {}))
 
-            # objects = dict(zip(profile, url))
+            result = []
+            for item1, item2 in zip(profile, url):
+                result.append({'artist': item1, 'image': item2})
 
-            objects = {'data': profile, 'image': url}
-            return objects
+            return result
         else:
             return {'error': f'Missing required key'}
     except KeyError as e:
