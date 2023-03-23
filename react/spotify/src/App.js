@@ -5,7 +5,6 @@ import axios from 'axios';
 function Search() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
-  const [results1, setResults1] = useState([]);
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
@@ -13,12 +12,9 @@ function Search() {
 
   const handleSearch = async () => {
   const response = await axios.get(`http://localhost:5000/spotify/search?query=${query}`);
-  let something = response['data']['item']['data']
+  let something = response['data']['data'];
   setResults(something);
-  let something1 = response['data']['item']['image']
-  setResults1(something1)
-
-  console.log(something)
+  console.log(something);
   };
 
 
@@ -28,9 +24,9 @@ function Search() {
       <button onClick={handleSearch}>Search</button>
 
       <ul>
-      {results.map((value, index) => (
-          <li key={index}>
-            {value} == <img src={results1[index]} />
+      {results.map((value) => (
+          <li key={value}>
+            {value.artist} == <img src={value.image} />
           </li>
         ))}
       </ul>
