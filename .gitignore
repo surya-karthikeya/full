@@ -83,3 +83,16 @@ react/spotify/public/favicon.ico
 react/spotify/public/robots.txt
 >>>>>>> 9554216 (react and flask based songs search api)
 react/spotify/src/setupTests.js
+react/movies/package-lock.json
+react/movies/public/index.html
+react/movies/src/setupTests.js
+react/movies/public/manifest.json
+react/movies/public/favicon.ico
+react/movies/public/logo512.png
+react/movies/public/robots.txt
+react/movies/public/logo192.png
+react/movies/README.md
+react/movies/src/reportWebVitals.js
+react/movies/src/App.test.js
+react/movies/package.json
+react/movies/src/logo.svg
