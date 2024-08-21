@@ -1,7 +1,6 @@
 import csv
 import time
 
-
 def leaf_details_to_csv(file_pat, detail):
     with open(file_path, 'w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=['Ninja_Id', 'Name', 'Age', 'Level'])
